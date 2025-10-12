@@ -1,132 +1,132 @@
-# Code Review Assistant
+# Code Review Assistant 🔍
 
 An AI-powered code review tool that analyzes code quality, identifies bugs, security issues, and provides improvement suggestions using Google Gemini AI.
 
-## Features
+## Features ✨
 
-- AI-Powered Analysis: Uses Google Gemini 1.5 Flash for intelligent code review
-- Multi-Language Support: JavaScript, Python, Java, C++, Go, Rust, and more
-- Comprehensive Metrics:
+- **AI-Powered Analysis**: Uses Google Gemini 1.5 Flash for intelligent code review
+- **Multi-Language Support**: JavaScript, Python, Java, C++, Go, Rust, and more
+- **Comprehensive Metrics**:
   - Overall code quality score (0-10)
   - Readability analysis
   - Best practices compliance
   - Security vulnerability detection
   - Performance optimization suggestions
   - Bug identification with fixes
-- Interactive Dashboard: Modern, responsive UI built with React and Vite
-- Review History: Track and revisit previous code reviews
-- File Upload: Support for direct file uploads or code paste
+- **Interactive Dashboard**: Modern, responsive UI built with React and Vite
+- **Review History**: Track and revisit previous code reviews
+- **File Upload**: Support for direct file uploads or code paste
 
-## Tech Stack
+## Tech Stack 🛠️
 
 ### Backend
-- Flask
-- Google Gemini API
-- Flask-CORS
-- Python 3.8+
+- **Flask** - Python web framework
+- **Google Gemini API** - AI code analysis
+- **Flask-CORS** - Cross-origin resource sharing
+- **Python 3.8+**
 
 ### Frontend
-- React
-- Vite
-- Axios
-- Lucide React
-- CSS3
+- **React** - UI library
+- **Vite** - Build tool
+- **Axios** - HTTP client
+- **Lucide React** - Icon library
+- **CSS3** - Styling
 
-## Installation
+## Installation 📦
 
 ### Prerequisites
 - Python 3.8 or higher
 - Node.js 18 or higher
-- Google Gemini API key
+- Google Gemini API key (free tier available)
 
 ### Backend Setup
+
 1. Clone the repository:
 ```bash
-git clone <repo-url>
+git clone <your-repo-url>
 cd code-review-assistant
-Navigate to backend and create virtual environment:
+```
 
-bash
-Copy code
+2. Navigate to backend and create virtual environment:
+```bash
 cd backend
 python -m venv venv
-Activate virtual environment:
 
-Windows: venv\Scripts\activate
+# Activate virtual environment
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+```
 
-Mac/Linux: source venv/bin/activate
-
-Install dependencies:
-
-bash
-Copy code
+3. Install dependencies:
+```bash
 pip install -r requirements.txt
-Create .env file:
+```
 
-text
-Copy code
+4. Create `.env` file:
+```bash
 GEMINI_API_KEY=your_gemini_api_key_here
 FLASK_ENV=development
 PORT=5000
-Run the backend:
+```
 
-bash
-Copy code
+5. Get your Gemini API key:
+   - Visit https://aistudio.google.com/app/apikey
+   - Create a new API key
+   - Copy and paste it in `.env` file
+
+6. Run the backend:
+```bash
 python app.py
-Backend will start on http://localhost:5000
+```
 
-Frontend Setup
-Open a new terminal and navigate to frontend:
+Backend will start on `http://localhost:5000`
 
-bash
-Copy code
+### Frontend Setup
+
+1. Open a new terminal and navigate to frontend:
+```bash
 cd frontend
-Install dependencies:
+```
 
-bash
-Copy code
+2. Install dependencies:
+```bash
 npm install
-Start the development server:
+```
 
-bash
-Copy code
+3. Start the development server:
+```bash
 npm run dev
-Frontend will start on http://localhost:5173
+```
 
-Usage
-Open your browser and go to http://localhost:5173
+Frontend will start on `http://localhost:5173`
 
-Either:
+## Usage 🚀
 
-Upload a code file, or
+1. Open your browser and go to `http://localhost:5173`
+2. Either:
+   - **Upload a code file** using the file picker, or
+   - **Paste your code** directly into the text area
+3. Set the filename and programming language
+4. Click **"Review Code"**
+5. Wait 5-10 seconds for AI analysis
+6. View comprehensive results including:
+   - Overall quality score
+   - Detailed metrics breakdown
+   - Identified bugs and security issues
+   - Concrete improvement suggestions with code examples
 
-Paste your code directly
+## API Endpoints 📡
 
-Set filename and programming language
-
-Click "Review Code"
-
-Wait 5-10 seconds for AI analysis
-
-View results including:
-
-Overall quality score
-
-Detailed metrics breakdown
-
-Identified bugs and security issues
-
-Concrete improvement suggestions with code examples
-
-API Endpoints
-Health Check
-bash
-Copy code
+### Health Check
+```
 GET /api/health
 Response: {"status": "healthy", "timestamp": "..."}
-Submit Code Review
-css
-Copy code
+```
+
+### Submit Code Review
+```
 POST /api/review
 Body: {
   "code": "string",
@@ -138,100 +138,113 @@ Response: {
   "reviewId": number,
   "analysis": {...}
 }
-Get All Reviews
-bash
-Copy code
+```
+
+### Get All Reviews
+```
 GET /api/reviews
 Response: {
   "success": true,
   "count": number,
   "reviews": [...]
 }
-Get Specific Review
-bash
-Copy code
+```
+
+### Get Specific Review
+```
 GET /api/reviews/:id
 Response: {
   "success": true,
   "review": {...}
 }
-Delete Review
-bash
-Copy code
+```
+
+### Delete Review
+```
 DELETE /api/reviews/:id
 Response: {
   "success": true,
   "message": "Review deleted"
 }
-Project Structure
-css
-Copy code
+```
+
+## Project Structure 📁
+
+```
 code-review-assistant/
 ├── backend/
-│   ├── venv/
-│   ├── app.py
-│   ├── .env
-│   └── requirements.txt
+│   ├── venv/              # Virtual environment
+│   ├── app.py             # Flask application
+│   ├── .env               # Environment variables
+│   └── requirements.txt   # Python dependencies
 ├── frontend/
 │   ├── src/
-│   │   ├── App.jsx
-│   │   ├── App.css
-│   │   └── main.jsx
-│   ├── package.json
-│   └── vite.config.js
+│   │   ├── App.jsx        # Main React component
+│   │   ├── App.css        # Styles
+│   │   └── main.jsx       # Entry point
+│   ├── package.json       # Node dependencies
+│   └── vite.config.js     # Vite configuration
 └── README.md
-Configuration
-Backend .env:
+```
 
-GEMINI_API_KEY: Google Gemini API key
+## Screenshots 📸
 
-FLASK_ENV: development/production
+(Add screenshots of your application here)
 
-PORT: backend port
+## Demo Video 🎥
 
-Frontend:
+(Add link to your demo video here)
 
-API URL set in src/App.jsx as http://localhost:5000/api (update for production)
+## Configuration ⚙️
 
-Limitations
-Gemini Free Tier Limits:
+### Backend Configuration (.env)
+- `GEMINI_API_KEY`: Your Google Gemini API key
+- `FLASK_ENV`: development or production
+- `PORT`: Backend port (default: 5000)
 
-15 requests per minute
+### Frontend Configuration
+- API URL is set in `src/App.jsx`: `const API_URL = 'http://localhost:5000/api'`
+- For production, update this to your deployed backend URL
 
-1,500 requests per day
+## Limitations ⚠️
 
-Reviews are stored in memory and will be lost on server restart
+- **Gemini Free Tier Limits**:
+  - 15 requests per minute
+  - 1,500 requests per day
+  - 1 million tokens per day
+- Reviews are stored in memory and will be lost on server restart
+- For production use, implement a database for persistent storage
 
-Use a database for persistent storage in production
+## Future Enhancements 🚀
 
-Future Enhancements
-Database integration
+- [ ] Database integration for persistent storage
+- [ ] User authentication and multi-user support
+- [ ] GitHub integration for direct PR reviews
+- [ ] Support for more programming languages
+- [ ] Export reports as PDF
+- [ ] Real-time collaborative code review
+- [ ] CI/CD pipeline integration
+- [ ] Code diff comparison
+- [ ] Custom review rules and templates
 
-User authentication and multi-user support
+## Contributing 🤝
 
-GitHub integration for direct PR reviews
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-More language support
+## License 📄
 
-Export reports as PDF
+This project is licensed under the MIT License.
 
-Real-time collaborative code review
+## Acknowledgments 🙏
 
-CI/CD pipeline integration
+- Google Gemini AI for powerful code analysis
+- React and Vite communities
+- Flask framework
+- Lucide for beautiful icons
 
-Code diff comparison
+## Contact 📧
 
-Custom review rules
+For questions or support, please open an issue in the GitHub repository.
 
+---
 
-#License
-MIT License
-
-#Acknowledgments
-Google Gemini AI
-
-React and Vite communities
-
-Flask framework
-
-Lucide icon library
